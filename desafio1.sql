@@ -1,3 +1,4 @@
+  DROP database IF EXISTS `SpotifyClone` ;
   CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
   -- -----------------------------------------------------
@@ -52,8 +53,8 @@
   `ano_lancamento` YEAR,
   `album_id_album` INT NOT NULL,
   `artista_id_artista` INT NOT NULL,
-    FOREIGN KEY (`artista_id_artista`)
-      REFERENCES `SpotifyClone`.`artista` (`id_artista`),
+	FOREIGN KEY (`artista_id_artista`)
+	  REFERENCES `SpotifyClone`.`artista` (`id_artista`),
     FOREIGN KEY (`album_id_album`)
       REFERENCES `SpotifyClone`.`album` (`id_album`)
     ) ENGINE = InnoDB;
@@ -126,18 +127,18 @@
     ('Somewhere Far Beyond', 5),
     ('I Put A Spell On You', 6);
 
-  INSERT INTO SpotifyClone.cancoes (cancoes, duracao_segundos, ano_lancamento, album_id_album)
+  INSERT INTO SpotifyClone.cancoes (cancoes, duracao_segundos, ano_lancamento, artista_id_artista, album_id_album)
   VALUES
-    ('BREAK MY SOUL', 279, 2022, 1),
-    ('VIRGO’S GROOVE', 369, 2022, 1),
-    ('ALIEN SUPERSTAR', 116, 2022, 1),
-    ('Don’t Stop Me Now', 203, 1978, 2),
-    ('Under Pressure', 152, 1982, 3),
-    ('Como Nossos Pais', 105, 1998, 4),
-    ('O Medo de Amar é o Medo de Ser Livre', 207, 2001, 5),
-    ('Samba em Paris', 267, 2003, 6),
-    ('The Bard’s Song', 244, 2007, 7),
-    ('Feeling Good', 100, 2012, 8);
+    ('BREAK MY SOUL', 279, 2022, 1, 1),
+    ('VIRGO’S GROOVE', 369, 2022, 1, 1),
+    ('ALIEN SUPERSTAR', 116, 2022, 1, 1),
+    ('Don’t Stop Me Now', 203, 1978, 2, 2),
+    ('Under Pressure', 152, 1982, 2, 3),
+    ('Como Nossos Pais', 105, 1998, 3, 4),
+    ('O Medo de Amar é o Medo de Ser Livre', 207, 2001, 3, 5),
+    ('Samba em Paris', 267, 2003, 4, 6),
+    ('The Bard’s Song', 244, 2007, 5, 7),
+    ('Feeling Good', 100, 2012, 6, 8);
   
   INSERT INTO SpotifyClone.reproducao (data_reproducao, cancoes_id_cancoes, usuario_id_usuario)
   VALUES
