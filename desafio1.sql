@@ -51,6 +51,9 @@
   `duracao_segundos` INT,
   `ano_lancamento` YEAR,
   `album_id_album` INT NOT NULL,
+  `artista_id_artista` INT NOT NULL,
+    FOREIGN KEY (`artista_id_artista`)
+      REFERENCES `SpotifyClone`.`artista` (`id_artista`),
     FOREIGN KEY (`album_id_album`)
       REFERENCES `SpotifyClone`.`album` (`id_album`)
     ) ENGINE = InnoDB;
@@ -138,7 +141,7 @@
   
   INSERT INTO SpotifyClone.reproducao (data_reproducao, cancoes_id_cancoes, usuario_id_usuario)
   VALUES
-    ('2022-02-28 10:45:55', 6, 1),
+    ('2022-02-28 10:45:55', 8, 1),
     ('2020-05-02 05:30:35', 2, 1),
     ('2020-03-06 11:22:33', 10, 1),
     ('2022-08-05 08:05:17', 10, 2),
